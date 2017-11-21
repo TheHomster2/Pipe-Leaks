@@ -4,11 +4,11 @@
 
 int main(){
 int p1[2], p2[2];
-int f1 = fork();
 int READ = 0;
 int WRITE = 1;
 pipe( p1 );
 pipe( p2 );
+int f1 = fork(); // Has to be at the end... Oops...
 
 if( f1 ){
     close( p1[READ] ); // For parent to write to child
